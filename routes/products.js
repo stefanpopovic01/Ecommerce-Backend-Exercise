@@ -5,9 +5,9 @@ const verifyTokenAndAdmin = require("../middleware/verifyTokenAndAdmin");
 
 router.get('/', productController.getProducts);
 router.get("/:id", productController.getUniqueProduct);
-router.post("/", verifyTokenAndAdmin, productController.addProduct);
-router.put("/:id", verifyTokenAndAdmin, productController.editProduct);
-router.patch("/:id", verifyTokenAndAdmin, productController.updateProduct);
-router.delete("/:id", verifyTokenAndAdmin, productController.deleteProduct);
+router.post("/", productController.addProduct);
+router.put("/:id", productController.editProduct);
+router.patch("/:id", productController.updateProduct);
+router.delete("/:id", productController.deleteProduct);
 
 module.exports = router;
